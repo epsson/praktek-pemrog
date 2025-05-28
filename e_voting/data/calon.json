@@ -1,0 +1,14 @@
+[
+    {
+        "id": "CL1",
+        "nama": "Ado",
+        "visi": "Menjadi nomor 1 dalam dunia musik",
+        "jumlah_suara": 1
+    },
+    {
+        "id": "CL2",
+        "nama": "Suisei",
+        "visi": "menjadi vtuber terbaik",
+        "jumlah_suara": 0
+    }
+]

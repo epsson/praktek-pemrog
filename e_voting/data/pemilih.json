@@ -1,0 +1,14 @@
+[
+    {
+        "id": "PM001",
+        "nama": "singer",
+        "jurusan": "Dkv",
+        "sudah_memilih": true
+    },
+    {
+        "id": "PM002",
+        "nama": "vtuber",
+        "jurusan": "Teknik Mesin",
+        "sudah_memilih": false
+    }
+]
