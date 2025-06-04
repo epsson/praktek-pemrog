@@ -1,0 +1,47 @@
+student_data = []
+
+while True:
+    print("\n--- Menu ---")
+    print("1. Tambah")
+    print("2. Tampil")
+    print("3. Keluar")
+    choice = input("Pilih (1/2/3): ")
+
+    if choice == '1':
+        print("\n--- Tambah Data ---")
+        while True:
+            nim = input("NIM (11 digit): "); 
+            if len(nim) == 11 and nim.isdigit(): break
+            else: print("NIM 11 digit!")
+        
+        while True:
+            nama = input("NAMA (min 6): "); 
+            if len(nama) >= 6: break
+            else: print("Nama min 6!")
+        
+        while True:
+            alamat = input("ALAMAT (min 10): "); 
+            if len(alamat) >= 10: break
+            else: print("Alamat min 10!")
+        
+        valid_kelas = ["TI24H", "TI24A", "TI24G", "TI24F"]
+        while True:
+            kelas = input(f"KELAS ({'/'.join(valid_kelas)}): ").upper(); 
+            if kelas in valid_kelas: break
+            else: print("Kelas tidak valid!")
+        
+        student_data.append({'NIM': nim, 'NAMA': nama, 'ALAMAT': alamat, 'KELAS': kelas})
+        print("Data ditambahkan!")
+
+    elif choice == '2':
+        print("\n--- Tampil Data ---")
+        if not student_data: print("Belum ada data.")
+        else:
+            for i, s in enumerate(student_data):
+                print(f"\n[{i+1}] NIM: {s['NIM']}, NAMA: {s['NAMA']}, ALAMAT: {s['ALAMAT']}, KELAS: {s['KELAS']}")
+                
+    elif choice == '3':
+        print("Selesai.")
+        break
+    else:
+        print("Pilihan tidak valid.")
