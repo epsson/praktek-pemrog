@@ -4,8 +4,9 @@ while True:
     print("\n--- Menu ---")
     print("1. Tambah")
     print("2. Tampil")
-    print("3. Keluar")
-    choice = input("Pilih (1/2/3): ")
+    print("3. Cari") # Opsi baru
+    print("4. Keluar")
+    choice = input("Pilih (1/2/3/4): ")
 
     if choice == '1':
         print("\n--- Tambah Data ---")
@@ -40,7 +41,27 @@ while True:
             for i, s in enumerate(student_data):
                 print(f"\n[{i+1}] NIM: {s['NIM']}, NAMA: {s['NAMA']}, ALAMAT: {s['ALAMAT']}, KELAS: {s['KELAS']}")
                 
-    elif choice == '3':
+    elif choice == '3': # Logika pencarian data
+        print("\n--- Cari Data ---")
+        if not student_data:
+            print("Belum ada data untuk dicari.")
+            continue
+            
+        search_nim = input("Masukkan NIM yang dicari: ")
+        found = False
+        for s in student_data:
+            if s['NIM'] == search_nim:
+                print("\nData Ditemukan:")
+                print(f"  NIM    : {s['NIM']}")
+                print(f"  NAMA   : {s['NAMA']}")
+                print(f"  ALAMAT : {s['ALAMAT']}")
+                print(f"  KELAS  : {s['KELAS']}")
+                found = True
+                break
+        if not found:
+            print("NIM tidak ditemukan.")
+
+    elif choice == '4':
         print("Selesai.")
         break
     else:
