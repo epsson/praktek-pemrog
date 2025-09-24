@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Nilai</title>
+</head>
+<body>
+    <h2>Program Konversi Nilai Angka ke Huruf</h2>
+    <input type="number" id="nilaiInput" placeholder="Masukkan nilai (0 - 100)">
+    <button onclick="konversiNilai()">Cek Nilai</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function konversiNilai() {
+            let nilai = document.getElementById("nilaiInput").value;
+            nilai = parseInt(nilai);
+            let grade;
+
+            if (nilai >= 85 && nilai <= 100) {
+                grade = "A";
+            } else if (nilai >= 70 && nilai <= 84) {
+                grade = "B";
+            } else if (nilai >= 55 && nilai <= 69) {
+                grade = "C";
+            } else if (nilai >= 40 && nilai <= 54) {
+                grade = "D";
+            } else if (nilai >= 0 && nilai < 40) {
+                grade = "E";
+            } else {
+                grade = "Nilai tidak valid!";
+            }
+
+            document.getElementById("hasil").innerHTML = "Nilai huruf: <b>" + grade + "</b>";
+        }
+    </script>
+</body>
+</html>
